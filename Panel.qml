@@ -573,7 +573,7 @@ Panel {
                         }
 
                         Button {
-                          text: "Stop"
+                          text: "Shutdown"
                           enabled: root.resourceStatus(resourceRow.modelData) === "running"
                             && root.actionBusyKey === ""
                           bordered: true
@@ -582,7 +582,7 @@ Panel {
                           horizontalPadding: Style.space(5)
                           verticalPadding: Style.space(2)
                           fontSize: Style.font.caption
-                          onClicked: root.requestGuestAction(resourceRow.modelData, "stop")
+                          onClicked: root.requestGuestAction(resourceRow.modelData, "shutdown")
                         }
 
                         Button {
@@ -659,7 +659,7 @@ Panel {
             + root.resourceName(root.pendingActionResource) + " (#"
             + root.pendingActionResource.vmid + ")?"
           : "Confirm guest action?"
-        confirmText: root.pendingAction === "reboot" ? "Reboot" : "Stop"
+        confirmText: root.pendingAction === "reboot" ? "Reboot" : "Shutdown"
         background: Color.background
         foreground: root.foreground
         selectedText: root.accent

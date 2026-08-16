@@ -130,7 +130,7 @@ Item {
     var node = String(resource.node || "")
     var vmid = String(resource.vmid || "")
     if ((type !== "qemu" && type !== "lxc") || !/^[A-Za-z0-9._-]+$/.test(node)
-        || !/^\d+$/.test(vmid) || ["start", "stop", "reboot"].indexOf(action) < 0) {
+        || !/^\d+$/.test(vmid) || ["start", "shutdown", "reboot"].indexOf(action) < 0) {
       lastError = "Invalid guest action"
       return
     }

@@ -39,7 +39,7 @@ Open **Datacenter → Permissions → Roles**, select **Create**, and name the r
 | `Sys.Audit` | Read node status and utilisation |
 | `VM.Audit` | Read VM and container status |
 | `Datastore.Audit` | Read storage status and usage |
-| `VM.PowerMgmt` | Start, stop, and reboot guests |
+| `VM.PowerMgmt` | Start, shut down, and reboot guests |
 
 For monitoring only, omit `VM.PowerMgmt`. The dashboard will work, but
 Proxmox will reject power actions.
@@ -136,7 +136,7 @@ for Omamox API requests; use it only on a trusted network.
 - Middle-click it to refresh immediately.
 - **Open Proxmox** opens the cluster web interface.
 - **Containers**, **VMs**, and **Disks** filter the resource list.
-- **Start**, **Stop**, and **Reboot** control a guest. Stop and Reboot require
+- **Start**, **Shutdown**, and **Reboot** control a guest. Shutdown and Reboot require
   confirmation.
 - **Web** opens the selected guest in Proxmox.
 - **Edit connection** changes the host, token, or TLS setting.

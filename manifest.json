@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "io.github.brandc87.omamox",
   "name": "Omamox",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "brandc87",
   "license": "MIT",
   "description": "Proxmox management and status from the Omarchy bar.",
