@@ -3,13 +3,7 @@
 Proxmox management and status from the Omarchy bar.
 Monitor nodes, guests, and storage with quick power controls and web access.
 
-## Requirements
-
-- Omarchy Quattro
-- A reachable Proxmox VE host
-- `curl`
-- GNU coreutils (`install` and `chmod`)
-- A dedicated Proxmox API token
+![Omamox preview](preview.png)
 
 ## Install
 
@@ -138,7 +132,7 @@ for Omamox API requests; use it only on a trusted network.
 - **Containers**, **VMs**, and **Disks** filter the resource list.
 - **Start**, **Shutdown**, and **Reboot** control a guest. Shutdown and Reboot require
   confirmation.
-- **Web** opens the selected guest in Proxmox.
+- **Open in UI** opens the selected guest in Proxmox.
 - **Edit connection** changes the host, token, or TLS setting.
 
 The service refreshes every 30 seconds and whenever the panel opens. Change
