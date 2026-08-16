@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.brandc87.omamox",
+  "name": "Omamox",
+  "version": "0.1.0",
+  "author": "brandc87",
+  "license": "MIT",
+  "description": "Proxmox management and status from the Omarchy bar.",
+  "kinds": ["bar-widget"],
+  "activation": "on-demand",
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Omamox",
+    "description": "Monitor Proxmox nodes, guests, and storage with quick management controls.",
+    "category": "System",
+    "aliases": ["proxmox", "pve", "virtual-machines"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "refreshIntervalSec": 30
+    },
+    "schema": [
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "min": 5,
+        "max": 3600,
+        "step": 5,
+        "defaultValue": 30
+      }
+    ]
+  }
+}

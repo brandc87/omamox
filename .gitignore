@@ -1,0 +1,10 @@
+# Local credentials and environment overrides
+.env
+.env.*
+!.env.example
+
+# Local development state
+.agents/
+.codex/
+*.log
+.DS_Store
