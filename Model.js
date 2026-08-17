@@ -1,5 +1,9 @@
 .pragma library
 
+function isHttpsUrl(value) {
+  return /^https:\/\/[^\s]+$/i.test(String(value || "").trim())
+}
+
 function parseConfig(raw) {
   var result = { apiKey: "", baseUrl: "", allowInsecure: false }
   String(raw || "").split(/\r?\n/).forEach(function(line) {

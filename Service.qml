@@ -52,9 +52,13 @@ Item {
     apiKey = config.apiKey
     baseUrl = config.baseUrl
     allowInsecure = config.allowInsecure
-    configured = apiKey !== "" && baseUrl !== ""
+    configured = apiKey !== "" && Model.isHttpsUrl(baseUrl)
     if (configured) refresh()
-    else statusText = "Omamox needs setup"
+    else {
+      statusText = "Omamox needs setup"
+      if (apiKey !== "" && baseUrl !== "" && !Model.isHttpsUrl(baseUrl))
+        lastError = "Proxmox URL must use HTTPS"
+    }
   }
 
   function curlQuote(value) {
@@ -107,8 +111,8 @@ Item {
   function saveConnection(url, key, insecure) {
     url = String(url || "").trim().replace(/\/+$/, "")
     key = String(key || "").trim()
-    if (!/^https?:\/\/[^\s]+$/.test(url)) {
-      lastError = "Enter a complete http:// or https:// URL"
+    if (!Model.isHttpsUrl(url)) {
+      lastError = "Enter a complete https:// URL"
       return
     }
     if (key.indexOf("!") < 1 || key.indexOf("=") < 3 || /[\r\n]/.test(key)) {

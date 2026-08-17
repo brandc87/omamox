@@ -128,7 +128,8 @@ Install a certificate trusted by the Omarchy machine whenever possible.
 
 For a self-signed certificate, enable **Allow insecure TLS** or set
 `ALLOW_INSECURE=true`. This disables certificate and hostname verification
-for Omamox API requests; use it only on a trusted network.
+for Omamox API requests; use it only on a trusted network. It does not permit
+plain HTTP: API requests and credentials are always sent over HTTPS.
 
 ## Usage
 
@@ -173,7 +174,7 @@ Install a trusted certificate, add the issuing CA to Omarchy, or enable
 ### The panel is empty
 
 - Confirm the Omarchy machine can reach port `8006` on the Proxmox host.
-- Include `http://` or `https://` and the correct port in the URL.
+- Include `https://` and the correct port in the URL.
 - Confirm the role has `Sys.Audit`, `VM.Audit`, and `Datastore.Audit`.
 - Click **Refresh** after correcting permissions.
 
