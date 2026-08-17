@@ -599,7 +599,7 @@ Panel {
                         }
 
                         Button {
-                          text: "Open in UI"
+                          text: "Edit"
                           bordered: true
                           foreground: root.foreground
                           accent: root.accent

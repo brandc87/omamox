@@ -17,6 +17,12 @@ Optionally position the widget:
 omarchy bar move io.github.brandc87.omamox --section right
 ```
 
+## Remove
+
+```bash
+omarchy plugin remove io.github.brandc87.omamox
+```
+
 ## Create the Proxmox API token
 
 The recommended setup uses a dedicated user, a least-privilege role, and a
